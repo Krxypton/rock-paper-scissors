@@ -1,4 +1,8 @@
-    for(let i = 0; i < 5; i++){
+   let humanScore = 0;
+   let computerScore = 0;
+
+   
+   for(let i = 0; i < 5; i++){
     var humanSelection = getHumanChoice();
     var computerSelection = getComputerChoice();
     playGame();
@@ -46,8 +50,7 @@ function getHumanChoice() {
 
 
  
-let humanScore = 0;
-let computerScore = 0;
+
 
 
 
@@ -81,4 +84,3 @@ function playGame() {
     
 }
 
-main();
