@@ -47,14 +47,6 @@ function getHumanChoice() {
   }
 }
 
-
-
- 
-
-
-
-
-
 function playGame() {
     
    
@@ -63,7 +55,7 @@ function playGame() {
     function playRound(humanChoice, computerChoice) {
     
     if((humanChoice === "Paper" && computerChoice === "Rock") || (humanChoice === "Rock" && computerChoice === "Scissors") || (humanChoice === "Scissors" && computerChoice === "Paper")){
-        console.log("You have beaten the Computer Congratulation!");
+        console.log("You have beaten the Computer Congratulations!");
         humanScore++;
         console.log("The current score is YOU: " + humanScore + " Computer: " + computerScore);
     }
