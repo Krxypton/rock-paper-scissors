@@ -1,15 +1,12 @@
    let humanScore = 0;
    let computerScore = 0;
 
-   
-   for(let i = 0; i < 5; i++){
+  
     var humanSelection = getHumanChoice();
     var computerSelection = getComputerChoice();
     playGame();
     
-    }
-
-
+    
 
 function getComputerChoice() {
     
@@ -19,7 +16,7 @@ function getComputerChoice() {
      if(random < 33){
         return "Rock";
     }
-    else if(random > 33 && random <= 66  ){
+    else if(random >= 33 && random <= 66  ){
         return "Paper";
     }
     else{
@@ -28,9 +25,8 @@ function getComputerChoice() {
 
 }
 
-
 function getHumanChoice() {
-    for(let i = 0; i < 5; i++){
+ 
     let answer= prompt("Do you choose Rock, Paper or Scissors? (if you write an incorrect input Scissors will be chosen for you");
     
     answer = answer.toLowerCase();
@@ -45,12 +41,10 @@ function getHumanChoice() {
         return "Scissors";
     }
   }
-}
+
 
 function playGame() {
     
-   
-
     playRound(humanSelection, computerSelection);
     function playRound(humanChoice, computerChoice) {
     
@@ -70,9 +64,6 @@ function playGame() {
     }
         
     }
-
-   
-
     
 }
 
