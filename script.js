@@ -1,10 +1,25 @@
-   let humanScore = 0;
-   let computerScore = 0;
+    let humanScore = 0;
+    let computerScore = 0;
 
-  
-    var humanSelection = getHumanChoice();
-    var computerSelection = getComputerChoice();
-    playGame();
+    const Buttons = document.querySelector(".Buttons");
+    Buttons.addEventListener("click", function(e){
+        let target = e.target;
+
+        switch(target.id) {
+            case "Rock":
+                console.log("You have chosen Rock");
+                playRound("Rock");
+                break;
+            case "Paper":
+                console.log("You have chosen Paper");
+                playRound("Paper");
+                break;
+            case "Scissors":
+                console.log("You have chosen Scissors");
+                playRound("Scissors");
+                break;
+        }
+    });
     
     
 
@@ -25,28 +40,33 @@ function getComputerChoice() {
 
 }
 
-function getHumanChoice() {
+// function getHumanChoice() {
  
-    let answer= prompt("Do you choose Rock, Paper or Scissors? (if you write an incorrect input Scissors will be chosen for you");
+//     let answer= ("Do you choose Rock, Paper or Scissors? (if you write an incorrect input Scissors will be chosen for you");
     
-    answer = answer.toLowerCase();
+//     answer = answer.toLowerCase();
 
-    if(answer === "rock") {
-        return "Rock";
-    }
-    else if(answer === "paper") { 
-        return "Paper";
-    }
-    else { 
-        return "Scissors";
-    }
-  }
+//     if(answer === "rock") {
+//         return "Rock";
+//     }
+//     else if(answer === "paper") { 
+//         return "Paper";
+//     }
+//     else { 
+//         return "Scissors";
+//     }
+//   }
 
 
-function playGame() {
+
     
-    playRound(humanSelection, computerSelection);
-    function playRound(humanChoice, computerChoice) {
+   
+    function playRound(humanChoice) {
+
+    // let humanChoice = getHumanChoice();
+    let computerChoice = getComputerChoice();
+
+    console.log("The computer has chosen " + computerChoice);
     
     if((humanChoice === "Paper" && computerChoice === "Rock") || (humanChoice === "Rock" && computerChoice === "Scissors") || (humanChoice === "Scissors" && computerChoice === "Paper")){
         console.log("You have beaten the Computer Congratulations!");
@@ -65,5 +85,8 @@ function playGame() {
         
     }
     
-}
+
+
+
+
 
