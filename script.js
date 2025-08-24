@@ -1,26 +1,35 @@
     let humanScore = 0;
     let computerScore = 0;
 
+    const container = document.querySelector(".Container");
+
     const Buttons = document.querySelector(".Buttons");
     Buttons.addEventListener("click", function(e){
         let target = e.target;
 
+        const choice = document.createElement("div");
+        choice.classList.add("human");
+
+
         switch(target.id) {
             case "Rock":
-                console.log("You have chosen Rock");
+                choice.textContent = ("You have chosen Rock");
+                container.appendChild(choice);
                 playRound("Rock");
                 break;
             case "Paper":
-                console.log("You have chosen Paper");
+                choice.textContent = ("You have chosen Paper");
+                container.appendChild(choice);
                 playRound("Paper");
                 break;
             case "Scissors":
-                console.log("You have chosen Scissors");
+                choice.textContent = ("You have chosen Scissors");
+                container.appendChild(choice);
                 playRound("Scissors");
                 break;
         }
+       
     });
-    
     
 
 function getComputerChoice() {
@@ -65,25 +74,33 @@ function getComputerChoice() {
 
     // let humanChoice = getHumanChoice();
     let computerChoice = getComputerChoice();
-
-    console.log("The computer has chosen " + computerChoice);
     
+    
+    const Results = document.createElement("div");
+    Results.classList.add("Result");
+    
+
+    Results.textContent = ("The computer has chosen " + computerChoice);
+    
+
     if((humanChoice === "Paper" && computerChoice === "Rock") || (humanChoice === "Rock" && computerChoice === "Scissors") || (humanChoice === "Scissors" && computerChoice === "Paper")){
-        console.log("You have beaten the Computer Congratulations!");
+        Results.textContent += ("You have beaten the Computer Congratulations!");
         humanScore++;
-        console.log("The current score is YOU: " + humanScore + " Computer: " + computerScore);
+        Results.textContent += ("The current score is YOU: " + humanScore + " Computer: " + computerScore);
     }
     else if((humanChoice === "Rock" && computerChoice === "Paper") || (humanChoice === "Scissors" && computerChoice === "Rock") || (humanChoice === "Paper" && computerChoice === "Scissors")){
-        console.log("You have been beaten by the Computer");
+        Results.textContent += ("You have been beaten by the Computer");
         computerScore++;
-        console.log("The current score is YOU: " + humanScore + " Computer: " + computerScore);
+        Results.textContent += ("The current score is YOU: " + humanScore + " Computer: " + computerScore);
     }
     else{
-        console.log("You have chosen the same item as the computer");
-        console.log("The current score is YOU: " + humanScore + " Computer: " + computerScore);
+        Results.textContent += ("You have chosen the same item as the computer");
+        Results.textContent += ("The current score is YOU: " + humanScore + " Computer: " + computerScore);
     }
+      
+   container.appendChild(Results);
         
-    }
+}
     
 
 
